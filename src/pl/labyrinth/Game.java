@@ -1,6 +1,11 @@
 package pl.labyrinth;
 
+import com.jogamp.graph.curve.opengl.RenderState;
+import com.jogamp.graph.curve.opengl.TextRenderer;
+import com.jogamp.graph.font.FontFactory;
+import com.jogamp.graph.geom.opengl.SVertex;
 import com.jogamp.opengl.util.FPSAnimator;
+import com.jogamp.opengl.util.glsl.ShaderState;
 import jp.nyatla.nyartoolkit.core.NyARException;
 import jp.nyatla.nyartoolkit.core.types.NyARIntSize;
 import jp.nyatla.nyartoolkit.jmf.utils.JmfCaptureDevice;
@@ -9,10 +14,7 @@ import jp.nyatla.nyartoolkit.jmf.utils.NyARJmfCamera;
 import jp.nyatla.nyartoolkit.jogl.utils.NyARGlMarkerSystem;
 import jp.nyatla.nyartoolkit.markersystem.NyARMarkerSystemConfig;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GL3;
-import javax.media.opengl.GLAutoDrawable;
-import javax.media.opengl.GLEventListener;
+import javax.media.opengl.*;
 import javax.media.opengl.awt.GLCanvas;
 import javax.swing.*;
 import java.awt.*;
@@ -23,6 +25,7 @@ import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -40,7 +43,8 @@ public class Game extends JFrame {
 
     private Labyrinth labyrinth;
 
-    private Dimension resolution;
+    // rozmiar obrazu z kamery
+    private Dimension resolution = new Dimension(640, 480);
     private GLCanvas canvas;
     private BufferedImage frame;
 
@@ -50,6 +54,7 @@ public class Game extends JFrame {
     private int markerId;
 
     private Shader backgroundShader;
+    private Shader textShader;
     private Shader perspectiveShader;
     private Shader diffuseShader;
 
@@ -63,6 +68,9 @@ public class Game extends JFrame {
 
     private Matrix4 perspectiveMatrix = Matrix4.perspective((float)(Math.PI * 0.27), 1.33f, 0.5f, 10000.f);
     private Matrix4 orthographicMatrix = Matrix4.orthographic(-1.f, 1.f, -1.f, 1.f, -1.f, 1.f);
+    private Matrix4 textMatrix = Matrix4.orthographic(-(float)resolution.getWidth() * 0.5f, (float)resolution.getWidth() * 0.5f,
+                                                      (float)resolution.getHeight() * 0.5f, -(float)resolution.getHeight() * 0.5f,
+                                                      -1.f, 1.f);
 
     private boolean showBackground = true;
     private boolean testProjectionMatrix = false;
@@ -122,6 +130,9 @@ public class Game extends JFrame {
     }
 
     class GLEventHandler implements GLEventListener {
+        TextRenderer textRenderer;
+        float z = 0.f;
+
         @Override
         public void init(GLAutoDrawable drawable) {
             GL3 gl = (GL3)drawable.getGL();
@@ -130,7 +141,12 @@ public class Game extends JFrame {
             gl.glClearColor(0.f, 0.f, 0.7f, 0.f);
             gl.glLineWidth(3.f);
 
+            RenderState renderState = RenderState.createRenderState(new ShaderState(), SVertex.factory());
+            textRenderer = TextRenderer.create(renderState, 0);
+            textRenderer.init((GL2ES2)gl);
+
             backgroundShader = new Shader(gl, "data/orthographic.vs", "data/texture.fs");
+            textShader = new Shader(gl, "data/orthographic.vs", "data/color_text.fs");
             perspectiveShader = new Shader(gl, "data/perspective.vs", "data/color.fs");
             diffuseShader = new Shader(gl, "data/perspective_normal.vs", "data/diffuse.fs");
 
@@ -319,6 +335,22 @@ public class Game extends JFrame {
                 } catch (NyARException e) {
                     e.printStackTrace();
                 }
+
+                textShader.bind();
+                backgroundQuad.setupAttributes(); // uh?
+                Vector3 textPos = new Vector3(-(float)resolution.getWidth() * 0.5f + 10.f, -(float)resolution.getHeight() * 0.5f + 10.f, 0.f);
+                Matrix4 textTranslationMatrix = Matrix4.translate(textPos);
+                setProjectionMatrix(gl, textMatrix.mulRet(textTranslationMatrix));
+                try {
+                    textRenderer.drawString3D((GL2ES2)drawable.getGL(),
+                                              FontFactory.getDefault().getDefault(),
+                                              "Autor: Marcin Radomski (AGH, WIEiT, Informatyka, II rok)",
+                                              new float[]{ 0.f, 0.f, 0.f },
+                                              20, new int[]{0}
+                                              );
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
 
@@ -331,9 +363,6 @@ public class Game extends JFrame {
     }
 
     private boolean init() {
-        // rozmiar obrazu z kamery
-        resolution = new Dimension(640, 480);
-
         // NyARToolkit
         try {
             markerSystemConfig = new NyARMarkerSystemConfig(new FileInputStream(CAMERA_PARAM_FILE), resolution.width,  resolution.height);
@@ -351,13 +380,19 @@ public class Game extends JFrame {
 
             synchronized (camera) {
                 // bo z jakiegos powodu nie zawsze lapie kamere
-                while (true) {
+                int attempts;
+                for (attempts = 10; attempts > 0; --attempts) {
                     try {
                         camera.start();
                         break;
                     } catch (NyARException e) {
                         e.printStackTrace();
                     }
+                }
+
+                if (attempts == 0) {
+                    System.err.println("fatal error: couldn't connect to camera");
+                    System.exit(0);
                 }
             }
         } catch (FileNotFoundException e) {
@@ -400,6 +435,7 @@ public class Game extends JFrame {
 
         addWindowListener(new WindowEventHandler());
         addKeyListener(new KeyEventHandler());
+        canvas.addKeyListener(new KeyEventHandler());
     }
 
     public static float[] toFloatArray(double[] array) {

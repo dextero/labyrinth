@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="JMFNoInstall:jar" />
+      <artifact name="labyrinth:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
@@ -10,7 +10,7 @@
     <ignored path="labyrinth.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/fragment.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359461348944" ignored="false" />
-    <file path="/Game.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1358643295535" ignored="false" />
+    <file path="/Game.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359470632519" ignored="false" />
     <file path="/MANIFEST.MF" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359390651397" ignored="false" />
     <file path="/JmfCaptureDeviceList.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359392952184" ignored="false" />
     <file path="/Registry.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359408348635" ignored="false" />
@@ -92,18 +92,52 @@
         <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Labyrinth.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="299" column="0" selection-start="12871" selection-end="12871" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#6569#7409#0" expanded="true" />
+                <element signature="e#7394#7395#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Texture.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Texture.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="13" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JmfNyARRGBRaster.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Game.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="393" column="79" selection-start="16839" selection-end="16839" vertical-scroll-proportion="0.4911111">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#7621#7818#0" expanded="true" />
+                <element signature="e#7803#7804#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JmfNyARRGBRaster.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/JmfNyARRGBRaster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="0" selection-start="1871" selection-end="1871" vertical-scroll-proportion="0.30944255">
+            <state line="41" column="0" selection-start="1871" selection-end="1871" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="13" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -112,24 +146,6 @@
         <entry file="file://$PROJECT_DIR$/JMFNoInstall/src/JMFInit.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="89" column="41" selection-start="2096" selection-end="2096" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JMFPropertiesGen.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JMFNoInstall/src/com/sun/media/util/JMFPropertiesGen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="13" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JMFRegistry.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JMFNoInstall/src/com/sun/media/util/JMFRegistry.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="32" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -174,7 +190,6 @@
         <option value="$PROJECT_DIR$/src/pl/labyrinth/Vector3.java" />
         <option value="$PROJECT_DIR$/src/pl/labyrinth/Drawable.java" />
         <option value="$PROJECT_DIR$/src/pl/labyrinth/Labyrinth.java" />
-        <option value="$PROJECT_DIR$/src/pl/labyrinth/Game.java" />
         <option value="$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/JmfCaptureDeviceList.java" />
         <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/JMFNoInstall/src/JMFPropertiesGen.java" />
@@ -186,6 +201,7 @@
         <option value="$PROJECT_DIR$/JMFNoInstall/src/JMFInit.java" />
         <option value="$PROJECT_DIR$/JMFNoInstall/src/Main.java" />
         <option value="$PROJECT_DIR$/JMFNoInstall/src/com/sun/media/util/Registry.java" />
+        <option value="$PROJECT_DIR$/src/pl/labyrinth/Game.java" />
       </list>
     </option>
   </component>
@@ -466,7 +482,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
@@ -694,7 +710,7 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983425" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24972376" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4646799" sideWeight="0.6730564" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23509933" sideWeight="0.6730564" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -773,16 +789,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/AffineTransform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="8" selection-start="1684" selection-end="1684" vertical-scroll-proportion="0.00990099" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Matrix4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="290" column="4" selection-start="8624" selection-end="8624" vertical-scroll-proportion="0.8679868" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Drawable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="291" column="35" selection-start="11371" selection-end="11371" vertical-scroll-proportion="0.0">
@@ -794,22 +800,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="15" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Shader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="8" selection-start="1526" selection-end="1526" vertical-scroll-proportion="0.02866779">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="32" selection-start="1566" selection-end="1566" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -860,6 +850,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Labyrinth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="299" column="0" selection-start="12871" selection-end="12871" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#6569#7409#0" expanded="true" />
+            <element signature="e#7394#7395#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Texture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/JMFNoInstall/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="0" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0">
@@ -867,18 +874,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Labyrinth.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="299" column="0" selection-start="12871" selection-end="12871" vertical-scroll-proportion="0.0">
+        <state line="10" column="13" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/JmfNyARRGBRaster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="1871" selection-end="1871" vertical-scroll-proportion="0.30944255">
+        <state line="41" column="0" selection-start="1871" selection-end="1871" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Shader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="8" selection-start="1309" selection-end="1309" vertical-scroll-proportion="0.9719731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="393" column="79" selection-start="16839" selection-end="16839" vertical-scroll-proportion="0.4911111">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7621#7818#0" expanded="true" />
+            <element signature="e#7803#7804#0" expanded="true" />
           </folding>
         </state>
       </provider>

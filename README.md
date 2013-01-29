@@ -22,4 +22,5 @@ Inne biblioteki, z ktorych korzysta aplikacja (dolaczone do projektu):
 * JOGL: https://jogamp.org/jogl/www/
 * biblioteka vecmath dolaczona do Java3D: http://www.oracle.com/technetwork/java/javase/tech/index-jsp-138252.html
 
-W tej chwili niestety nie ma mozliwosci uruchomienia projektu poza IDE (IntelliJ Idea), ale pracuje nad tym. Z jakiegos powodu JMFowi nie podoba sie pakowanie go w plik .jar.
+W tej chwili niestety nie ma mozliwosci uruchomienia projektu poza IDE (IntelliJ Idea), ale pracuje nad tym. Z jakiegos powodu JMFowi nie podoba sie, jezeli probuje sie go odpalic bez instalacji.
+

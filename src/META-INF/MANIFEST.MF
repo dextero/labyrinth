@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
-Class-Path: lib/gluegen-rt.jar lib/jbullet.jar lib/jmf.jar lib/jogl-al
- l.jar lib/vecmath.jar "c:/program files (x86)/jmf2.1.1e/lib/sound.jar
- " "c:/program files (x86)/jmf2.1.1e/lib/jmf.jar" "c:/program files (x
- 86)/jmf2.1.1e/lib"
+Class-Path: lib/gluegen-rt.jar lib/jbullet.jar lib/jogl-all.jar lib/ve
+ cmath.jar "c:/program files (x86)/jmf2.1.1e/lib/sound.jar" "c:/progra
+ m files (x86)/jmf2.1.1e/lib/jmf.jar" "c:/program files (x86)/jmf2.1.1
+ e/lib"
 Main-Class: Main
 
