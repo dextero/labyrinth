@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="jbullet">
     <CLASSES>
-      <root url="jar://D:/lib/jbullet/jbullet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jbullet.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
