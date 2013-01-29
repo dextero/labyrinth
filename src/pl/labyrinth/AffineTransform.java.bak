@@ -1,0 +1,96 @@
+package pl.labyrinth;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: dex
+ * Date: 12/28/12
+ * Time: 12:32 PM
+ */
+public class AffineTransform {
+    private float[] translation;
+    private float[] rotationAxis;
+    private float rotationAngle;
+    private float[] scale;
+
+    public AffineTransform(float[] translation, float[] rotationAxis, float rotationAngle, float[] scale) {
+        this.translation = translation;
+        this.rotationAxis = rotationAxis;
+        this.rotationAngle = rotationAngle;
+        this.scale = scale;
+    }
+
+    public float[] getTranslation() {
+        return translation;
+    }
+
+    public void setTranslation(float[] translation) {
+        this.translation = translation;
+    }
+
+    public float[] getRotationAxis() {
+        return rotationAxis;
+    }
+
+    public void setRotationAxis(float[] rotationAxis) {
+        this.rotationAxis = rotationAxis;
+    }
+
+    public float getRotationAngle() {
+        return rotationAngle;
+    }
+
+    public void setRotationAngle(float rotationAngle) {
+        this.rotationAngle = rotationAngle;
+    }
+
+    public float[] getEulerAngles() {
+        float[] yawPitchRoll = new float[3];
+
+        double sin = Math.sin(rotationAngle);
+        double cos = Math.cos(rotationAngle);
+
+        double t = 1.0 - cos;
+
+        if (rotationAxis[0] * rotationAxis[1] * t + rotationAxis[2] * sin > 0.998) {
+            yawPitchRoll[0] = (float)(2. * Math.atan2(rotationAxis[0] * Math.sin(rotationAngle * .5),
+                                                       Math.cos(rotationAngle * .5)));
+            yawPitchRoll[1] = (float)(Math.PI * .5);
+            yawPitchRoll[2] = 0.f;
+        } else if (rotationAxis[0] * rotationAxis[1] * t + rotationAxis[2] * sin < -0.998) {
+            yawPitchRoll[0] = (float)(-2. * Math.atan2(rotationAxis[0] * Math.sin(rotationAngle * .5),
+                    Math.cos(rotationAngle * .5)));
+            yawPitchRoll[1] = (float)(-Math.PI * .5);
+            yawPitchRoll[2] = 0.f;
+        } else {
+            yawPitchRoll[0] = (float)(Math.atan2(rotationAxis[1] * sin - rotationAxis[0] * rotationAxis[2] * t,
+                                                 1. - (rotationAxis[1] * rotationAxis[1] + rotationAxis[2] * rotationAxis[2]) * t));
+            yawPitchRoll[1] = (float)(Math.asin(rotationAxis[0] * rotationAxis[1] * t + rotationAxis[2] * sin));
+            yawPitchRoll[2] = (float)(Math.atan2(rotationAxis[0] * sin - rotationAxis[1] * rotationAxis[2] * t,
+                                                 1. - (rotationAxis[0] * rotationAxis[0] + rotationAxis[2] * rotationAxis[2]) * t));
+        }
+
+        return yawPitchRoll;
+    }
+
+    public float[] getScale() {
+        return scale;
+    }
+
+    public void setScale(float[] scale) {
+        this.scale = scale;
+    }
+
+    public Matrix4 toMatrix() {
+        return Matrix4.scale(scale).mul(
+                   Matrix4.rotate(rotationAxis, rotationAngle).mul(
+                       Matrix4.translate(translation)));
+    }
+
+    @Override
+    public String toString() {
+        return String.format("translation: (%f, %f, %f)\nrotation: (%f, %f, %f), angle: %f\nscale: (%f, %f %f)\n",
+                             translation[0], translation[1], translation[2],
+                             rotationAxis[0], rotationAxis[1], rotationAxis[2], rotationAngle,
+                             scale[0], scale[1], scale[2]);
+    }
+}
