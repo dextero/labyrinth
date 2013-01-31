@@ -10,6 +10,8 @@ import javax.swing.*;
  */
 public class Main {
     public static void main(String[] args) {
+        System.out.printf("java.library.path = %s\n", System.getProperty("java.library.path"));
+        System.out.printf("jna.library.path = %s\n", System.getProperty("jna.library.path"));
         try {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
         } catch (Exception e) {

@@ -1,7 +1,10 @@
 Manifest-Version: 1.0
-Class-Path: lib/gluegen-rt.jar lib/jbullet.jar lib/jogl-all.jar lib/ve
- cmath.jar "c:/program files (x86)/jmf2.1.1e/lib/sound.jar" "c:/progra
- m files (x86)/jmf2.1.1e/lib/jmf.jar" "c:/program files (x86)/jmf2.1.1
- e/lib"
+Class-Path: . lib lib/ffmpeg-java.jar lib/fmj.jar lib/gluegen-rt.jar l
+ ib/gstreamer-java.jar lib/jbullet.jar lib/jdom.jar lib/jheora-patch.j
+ ar lib/jl1.0.jar lib/jna.jar lib/jogg-0.0.7.jar lib/jogl-all.jar lib/
+ jorbis-0.0.15.jar lib/jspeex.jar lib/lti-civil-no_s_w_t.jar lib/mp3sp
+ i1.9.4.jar lib/theora-java.jar lib/tritonus_share.jar lib/vecmath.jar
+  lib/vorbisspi1.0.2.jar
 Main-Class: Main
+FMJAutoConfig-Class: FMJAutoConfig
 

@@ -1,13 +1,15 @@
 package jp.nyatla.nyartoolkit.jmf.utils;
 
-import java.awt.Dimension;
-
-import javax.media.*;
-import javax.media.control.*;
-import javax.media.format.*;
-import javax.media.protocol.*;
 import jp.nyatla.nyartoolkit.core.NyARException;
 import jp.nyatla.nyartoolkit.core.types.NyARIntSize;
+
+import javax.media.*;
+import javax.media.control.FormatControl;
+import javax.media.format.RGBFormat;
+import javax.media.format.VideoFormat;
+import javax.media.protocol.CaptureDevice;
+import javax.media.protocol.DataSource;
+import java.awt.*;
 
 /**
  * 1個のキャプチャデバイスを管理するクラスです。
@@ -78,8 +80,9 @@ public class JmfCaptureDevice
 		}
 		Format[] formats = this._info.getFormats();
 		VideoFormat f = new VideoFormat(_enc_str[i_encode], i_size, Format.NOT_SPECIFIED, null, i_rate);
+        VideoFormat fLowercase = new VideoFormat(_enc_str[i_encode].toLowerCase(), i_size, Format.NOT_SPECIFIED, null, i_rate);
 		for (int i = 0; i < formats.length; i++){
-			if (formats[i].matches(f)) {
+			if (formats[i].matches(f) || formats[i].matches(fLowercase)) {
 				//[暫定実装]RGBの場合のみ、24bit-BGRAを強制する。他のフォーマットも取りたいときは要改造
 				//これはMacOSのJMF等で問題が出るかもしれない。問題が出たら教えて下さい。
 				if(formats[i] instanceof RGBFormat){

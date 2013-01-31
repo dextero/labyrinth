@@ -11,7 +11,8 @@
     <orderEntry type="library" name="jbullet" level="project" />
     <orderEntry type="library" name="jogl-all" level="project" />
     <orderEntry type="library" name="vecmath" level="project" />
-    <orderEntry type="library" name="jmf" level="project" />
+    <orderEntry type="library" name="fmj" level="project" />
+    <orderEntry type="library" name="FMJ-dependencies" level="project" />
   </component>
 </module>
 

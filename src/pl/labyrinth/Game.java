@@ -369,7 +369,8 @@ public class Game extends JFrame {
 
             JmfCaptureDeviceList devices = new JmfCaptureDeviceList();
             JmfCaptureDevice device = devices.getDevice(0);
-            device.setCaptureFormat(markerSystemConfig.getScreenSize(), 30.f);
+            //device.setCaptureFormat(markerSystemConfig.getScreenSize(), 30.0003f);
+            device.setCaptureFormat(0);
 
             camera = new NyARJmfCamera(device);
             glMarkerSystem = new NyARGlMarkerSystem(markerSystemConfig);

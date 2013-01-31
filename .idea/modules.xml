@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JMFNoInstall/JMFNoInstall.iml" filepath="$PROJECT_DIR$/JMFNoInstall/JMFNoInstall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FMJAutoConfig/FMJAutoConfig.iml" filepath="$PROJECT_DIR$/FMJAutoConfig/FMJAutoConfig.iml" />
       <module fileurl="file://$PROJECT_DIR$/labyrinth.iml" filepath="$PROJECT_DIR$/labyrinth.iml" />
     </modules>
   </component>
