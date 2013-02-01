@@ -23,4 +23,4 @@ Uzyte biblioteki
 * NyARToolkit: http://nyatla.jp/nyartoolkit/wp/?page_id=198
 * JOGL: https://jogamp.org/jogl/www/
 * biblioteka vecmath dolaczona do Java3D: http://www.oracle.com/technetwork/java/javase/tech/index-jsp-138252.html
-* 
+
