@@ -3,13 +3,8 @@
  */
 package net.sf.fmj.filtergraph;
 
+import javax.media.*;
 import java.io.IOException;
-
-import javax.media.Buffer;
-import javax.media.Demultiplexer;
-import javax.media.Format;
-import javax.media.ResourceUnavailableException;
-import javax.media.Track;
 
 /**
  * A node in a filter graph for a Demultiplexer.
@@ -118,15 +113,15 @@ public class DemuxNode extends FilterGraphNode
 				buffer1.setLength(0);
 				buffer1.setSequenceNumber(sequenceNumber++); // TODO: 1 seq # per track is needed
 				buffer1.setFlags(0);	// clear all flags. TODO: does JMF do this?  Or must the demux itself clear the flags?
-				
+
 //				// It does not appear that JMF sets the timestamp to what it thinks it is going to be.
 				// although this is theoretically possible knowing the frame/buffer # and the framerate.
 
 				// according to the docs,  Each track has a sequence number that is updated by the Demultiplexer for each frame
 				// however, the OggDemux does not do this, and it appears that JMF sets the sequence number before giving it to the demux.
 //				 TODO: other fields to clear?
-				
-				
+
+
 				getTracks()[i].readFrame(buffer1);
 				if (buffer1.getFormat() == null)
 					buffer1.setFormat(getTracks()[i].getFormat());  // TODO: is this right?  JMF appears to set the format in between demux track read adnd codec process.

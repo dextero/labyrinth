@@ -1,51 +1,24 @@
 package net.sf.fmj.media.content.unknown;
 
-import java.awt.Component;
-import java.awt.Rectangle;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import com.lti.utils.synchronization.CloseableThread;
+import net.sf.fmj.ejmf.toolkit.gui.controlpanel.StandardControlPanel;
+import net.sf.fmj.filtergraph.*;
+import net.sf.fmj.media.AbstractProcessor;
+import net.sf.fmj.utility.LoggerSingleton;
 
-import javax.media.BadHeaderException;
-import javax.media.Buffer;
-import javax.media.Clock;
-import javax.media.ClockStoppedException;
-import javax.media.Codec;
-import javax.media.Demultiplexer;
-import javax.media.Format;
-import javax.media.GainControl;
-import javax.media.IncompatibleSourceException;
-import javax.media.IncompatibleTimeBaseException;
-import javax.media.InternalErrorEvent;
-import javax.media.Multiplexer;
-import javax.media.NotConfiguredError;
-import javax.media.NotRealizedError;
-import javax.media.Renderer;
-import javax.media.ResourceUnavailableException;
-import javax.media.Time;
-import javax.media.TimeBase;
-import javax.media.Track;
-import javax.media.UnsupportedPlugInException;
+import javax.media.*;
 import javax.media.control.TrackControl;
 import javax.media.format.AudioFormat;
 import javax.media.format.VideoFormat;
 import javax.media.protocol.ContentDescriptor;
 import javax.media.protocol.DataSource;
 import javax.media.renderer.VideoRenderer;
-
-import net.sf.fmj.ejmf.toolkit.gui.controlpanel.StandardControlPanel;
-import net.sf.fmj.filtergraph.DemuxNode;
-import net.sf.fmj.filtergraph.FilterGraph;
-import net.sf.fmj.filtergraph.FilterGraphLink;
-import net.sf.fmj.filtergraph.FilterGraphNode;
-import net.sf.fmj.filtergraph.MuxNode;
-import net.sf.fmj.filtergraph.RendererNode;
-import net.sf.fmj.media.AbstractProcessor;
-import net.sf.fmj.utility.LoggerSingleton;
-
-import com.lti.utils.synchronization.CloseableThread;
+import java.awt.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * The main handler for media.  Builds a playback filter graph and starts threads to process it.
@@ -477,7 +450,8 @@ public class Handler extends AbstractProcessor
 		private Buffer readAndProcessNextFrame(int flags)
 		{
 //			 TODO: we need to honor isEnabled when processing tracks
-			FilterGraph.process(root, null, trackNumber, -1, flags);
+            // dex: dlaczego bez tej linii dziala 3x szybciej i bez wyciekow?!
+			//FilterGraph.process(root, null, trackNumber, -1, flags);
 			final Buffer b = (Buffer) root.getOutputBuffer(trackNumber);
 			if (b == null)
 				throw new NullPointerException();

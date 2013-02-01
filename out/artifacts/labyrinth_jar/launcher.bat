@@ -1,6 +1,6 @@
 set JAVA_32BIT="c:\program files (x86)\java\jre7\bin\java"
 
-if not exist (%USERPROFILE%\.fmj.registry.xml) (
+if not exist ("%USERPROFILE%\.fmj.registry.xml") (
     :: tworzenie rejestru urzadzen FMJ
     %JAVA_32BIT% ^
         -Djava.library.path="native/win32-x86" ^

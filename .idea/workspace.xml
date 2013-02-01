@@ -15,13 +15,13 @@
     <file path="/JmfCaptureDeviceList.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359591855535" ignored="false" />
     <file path="/Registry.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359543732658" ignored="false" />
     <file path="/RegistryGen.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359406977778" ignored="false" />
-    <file path="/Main.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359667061439" ignored="false" />
+    <file path="/Main.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359671387058" ignored="false" />
     <file path="D:/lib/FMJ/src/com/sun/media/codec/video/colorspace/YUVToRGB.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359544101018" ignored="false" />
     <file path="D:/lib/FMJ/src/com/sun/media/util/Registry.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359543732658" ignored="false" />
     <file path="D:/lib/FMJ/src/com/sun/media/JMFSecurityManager.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359543865602" ignored="false" />
     <file path="/JMFSecurityManager.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359543846269" ignored="false" />
     <file path="/YUVToRGB.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359544096727" ignored="false" />
-    <file path="/NyARJmfCamera.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359588398110" ignored="false" />
+    <file path="/NyARJmfCamera.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359675430880" ignored="false" />
     <file path="D:/lib/FMJ/src.capture/net/sf/fmj/media/cdp/civil/CaptureDevicePlugger.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359625529464" ignored="false" />
     <file path="/CaptureDevicePlugger.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359625525856" ignored="false" />
     <file path="D:/lib/FMJ/err.txt" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359625601700" ignored="false" />
@@ -39,8 +39,15 @@
     <file path="/Manager.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359665032056" ignored="false" />
     <file path="/AbstractController.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359645782413" ignored="false" />
     <file path="/RTPSessionMgr.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359661858595" ignored="false" />
-    <file path="/Handler.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359664841243" ignored="false" />
+    <file path="/Handler.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359715029339" ignored="false" />
     <file path="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359667250957" ignored="false" />
+    <file path="/FMJAutoConfig.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359671366977" ignored="false" />
+    <file path="/a.dummy" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359713523086" ignored="false" />
+    <file path="/NyARSensor.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359674785742" ignored="false" />
+    <file path="/MonitorStream.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359675678547" ignored="false" />
+    <file path="/DataSource.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359675841404" ignored="false" />
+    <file path="D:/lib/FMJ/src/net/sf/fmj/filtergraph/DemuxNode.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359714489837" ignored="false" />
+    <file path="/DemuxNode.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359713842164" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,99 +67,9 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint url="file://D:/lib/FMJ/src.capture/net/sf/fmj/media/protocol/civil/DataSource.java" line="172" class="net.sf.fmj.media.protocol.civil.DataSource" package="net.sf.fmj.media.protocol.civil">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/JmfCaptureDevice.java" line="223" class="jp.nyatla.nyartoolkit.jmf.utils.JmfCaptureDevice" package="jp.nyatla.nyartoolkit.jmf.utils">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/JmfCaptureDevice.java" line="218" class="jp.nyatla.nyartoolkit.jmf.utils.JmfCaptureDevice" package="jp.nyatla.nyartoolkit.jmf.utils">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://D:/lib/FMJ/src/javax/media/Manager.java" line="447" class="javax.media.Manager" package="javax.media">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://D:/lib/FMJ/src/javax/media/Manager.java" line="710" class="javax.media.Manager.BlockingRealizer" package="javax.media">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -181,20 +98,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
       <breakpoint url="file://D:/lib/FMJ/src/javax/media/Manager.java" line="729" class="javax.media.Manager.BlockingRealizer" package="javax.media">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://D:/lib/FMJ/src/net/sf/fmj/media/content/unknown/Handler.java" line="979" class="net.sf.fmj.media.content.unknown.Handler" package="net.sf.fmj.media.content.unknown">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -237,6 +140,40 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </line_breakpoints>
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -246,96 +183,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RTPSyncBufferMux.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://D:/lib/FMJ/src/net/sf/fmj/media/multiplexer/RTPSyncBufferMux.java">
+      <file leaf-file-name="Game.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="0" selection-start="1327" selection-end="1327" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RTPSessionMgr.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://D:/lib/FMJ/src.rtp/net/sf/fmj/media/rtp/RTPSessionMgr.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="252" column="0" selection-start="9635" selection-end="9635" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Manager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://D:/lib/FMJ/src/javax/media/Manager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="723" column="27" selection-start="20664" selection-end="20664" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FMJAutoConfig.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/FMJAutoConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="489" selection-end="489" vertical-scroll-proportion="0.5840868">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="13" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FormatUtils.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://D:/lib/FMJ/src/net/sf/fmj/utility/FormatUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="0" selection-start="1594" selection-end="1594" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RTPLocalParticipant.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://D:/lib/FMJ/src.rtp/net/sf/fmj/media/rtp/RTPLocalParticipant.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="0" selection-start="2160" selection-end="2160" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RTPParticipant.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://D:/lib/FMJ/src.rtp/net/sf/fmj/media/rtp/RTPParticipant.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="0" selection-start="3014" selection-end="3014" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Handler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://D:/lib/FMJ/src/net/sf/fmj/media/content/unknown/Handler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="981" column="0" selection-start="29059" selection-end="29059" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#20671#20684#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JmfCaptureDevice.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/JmfCaptureDevice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="217" column="59" selection-start="5917" selection-end="5917" vertical-scroll-proportion="0.0">
+            <state line="189" column="13" selection-start="7184" selection-end="7184" vertical-scroll-proportion="0.4288889">
               <folding />
             </state>
           </provider>
@@ -358,22 +209,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/QueryJMF.java" />
-        <option value="$PROJECT_DIR$/src/QueryJMF20.java" />
-        <option value="$PROJECT_DIR$/JMFNoInstall/src/com/sun/media/util/Registry.java" />
-        <option value="$PROJECT_DIR$/JMFNoInstall/src/JMFInit.java" />
-        <option value="$PROJECT_DIR$/JMFNoInstall/src/com/sun/media/util/RegistryGen.java" />
-        <option value="$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/NyARJmfCamera.java" />
         <option value="$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/JmfCaptureDeviceList.java" />
-        <option value="$PROJECT_DIR$/src/pl/labyrinth/Game.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/JmfCaptureDevice.java" />
         <option value="D:/lib/FMJ/src.rtp/net/sf/fmj/media/rtp/RTPSessionMgr.java" />
         <option value="D:/lib/FMJ/src/net/sf/fmj/media/multiplexer/RTPSyncBufferMux.java" />
-        <option value="D:/lib/FMJ/src/net/sf/fmj/media/content/unknown/Handler.java" />
         <option value="D:/lib/FMJ/src/javax/media/Manager.java" />
         <option value="$PROJECT_DIR$/JMFNoInstall/src/Main.java" />
         <option value="$PROJECT_DIR$/FMJAutoConfig/src/FMJAutoConfig.java" />
+        <option value="$PROJECT_DIR$/src/FMJAutoConfig.java" />
+        <option value="$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/markersystem/NyARSensor.java" />
+        <option value="$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/NyARJmfCamera.java" />
+        <option value="$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/MonitorStream.java" />
+        <option value="D:/lib/FMJ/src.capture/net/sf/fmj/media/protocol/civil/DataSource.java" />
+        <option value="$PROJECT_DIR$/FMJ/src/net/sf/fmj/media/content/unknown/Handler.java" />
+        <option value="$PROJECT_DIR$/src/pl/labyrinth/Game.java" />
+        <option value="D:/lib/FMJ/src/net/sf/fmj/media/content/unknown/Handler.java" />
       </list>
     </option>
   </component>
@@ -381,9 +232,10 @@
     <option name="jreName" value="1.7" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="991" />
-    <option name="width" value="929" />
-    <option name="height" value="1080" />
+    <option name="x" value="54" />
+    <option name="y" value="-8" />
+    <option name="width" value="1874" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -429,6 +281,11 @@
             <id>Security issues</id>
           </State>
         </expanded-state>
+        <selected-state>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -458,72 +315,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labyrinth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FMJ-dependencies" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labyrinth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FMJ-dependencies" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ffmpeg-java.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ffmpeg_java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labyrinth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FMJ-dependencies" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ffmpeg-java.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="labyrinth" />
@@ -616,36 +409,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labyrinth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labyrinth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FMJAutoConfig" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labyrinth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labyrinth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FMJAutoConfig" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -684,7 +455,7 @@
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="options.lastSelected" value="Errors" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -897,27 +668,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="991" y="0" width="929" height="1080" extended-state="0" />
+    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983425" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32719395" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24944812" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7058824" sideWeight="0.67199147" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43156734" sideWeight="0.67838126" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15286976" sideWeight="0.6730564" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15286976" sideWeight="0.67838126" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27450982" sideWeight="0.6728061" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13134658" sideWeight="0.67838126" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33261105" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32161874" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7752929" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -983,120 +754,121 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/lib/FMJ/src/net/sf/fmj/media/multiplexer/RawBufferMux.java">
+    <entry file="file://$PROJECT_DIR$/src/FMJAutoConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="4" selection-start="3045" selection-end="3045" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/lib/FMJ/src.capture/net/sf/fmj/media/protocol/civil/DataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="404" column="0" selection-start="10613" selection-end="10613" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/MonitorStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="0" selection-start="2362" selection-end="2362" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/lib/FMJ/src/net/sf/fmj/media/parser/RawPushBufferParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="0" selection-start="3006" selection-end="3006" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/lib/FMJ/src.rtp/net/sf/fmj/media/rtp/RTPGlobalReceptionStats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="0" selection-start="3049" selection-end="3049" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/lib/FMJ/src.rtp/net/sf/fmj/media/rtp/RTPGlobalTransmissionStats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="0" selection-start="2347" selection-end="2347" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/lib/FMJ/src.rtp/net/sf/fmj/media/rtp/RTPParticipant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="0" selection-start="3014" selection-end="3014" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/lib/FMJ/src.rtp/net/sf/fmj/media/rtp/RTPLocalParticipant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="0" selection-start="2160" selection-end="2160" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/lib/FMJ/src/net/sf/fmj/utility/FormatUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="1594" selection-end="1594" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/lib/FMJ/src/net/sf/fmj/media/multiplexer/RTPSyncBufferMux.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="1327" selection-end="1327" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/lib/FMJ/src.rtp/net/sf/fmj/media/rtp/RTPSessionMgr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="252" column="0" selection-start="9635" selection-end="9635" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/lib/FMJ/src/net/sf/fmj/media/content/unknown/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="981" column="0" selection-start="29059" selection-end="29059" vertical-scroll-proportion="0.0">
+        <state line="19" column="0" selection-start="489" selection-end="489" vertical-scroll-proportion="0.5286416">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20671#20684#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/JmfCaptureDevice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="217" column="59" selection-start="5917" selection-end="5917" vertical-scroll-proportion="0.0">
+        <state line="127" column="19" selection-start="3584" selection-end="3584" vertical-scroll-proportion="0.33277592">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/lib/FMJ/src/javax/media/Manager.java">
+    <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Texture.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="723" column="27" selection-start="20664" selection-end="20664" vertical-scroll-proportion="0.0">
+        <state line="45" column="33" selection-start="1152" selection-end="1152" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/markersystem/NyARMarkerSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0">
+        <state line="598" column="16" selection-start="17197" selection-end="17197" vertical-scroll-proportion="0.33277592" />
+      </provider>
+    </entry>
+    <entry file="file://D:/lib/FMJ/src/net/sf/fmj/filtergraph/FilterGraphNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="4" selection-start="1366" selection-end="1366" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FMJAutoConfig.java">
+    <entry file="file://D:/lib/FMJ/src.utils/com/lti/utils/synchronization/ProducerConsumerQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="489" selection-end="489" vertical-scroll-proportion="0.5840868">
+        <state line="21" column="0" selection-start="439" selection-end="439" vertical-scroll-proportion="0.2782324" />
+      </provider>
+    </entry>
+    <entry file="file://D:/lib/FMJ/src.rtp/net/sf/fmj/media/rtp/RTPSendStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="30" selection-start="2951" selection-end="2951" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/lib/FMJ/src.capture/net/sf/fmj/media/protocol/civil/DataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="72" selection-start="2319" selection-end="2319" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/MonitorStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="21" selection-start="3441" selection-end="3441" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FMJ/src/net/sf/fmj/media/content/unknown/Handler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="921" column="12" selection-start="27158" selection-end="27158" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#20671#20684#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/NyARJmfCamera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="0" selection-start="1822" selection-end="1822" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/markersystem/NyARSensor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="0" selection-start="3649" selection-end="3649" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#6606#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_10/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="382" column="29" selection-start="17643" selection-end="17643" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#25910#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/lib/FMJ/src/net/sf/fmj/media/content/unknown/Handler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="451" column="68" selection-start="14188" selection-end="14188" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/lib/FMJ/src/net/sf/fmj/media/parser/RawPushBufferParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="2" selection-start="1026" selection-end="1026" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="189" column="13" selection-start="7184" selection-end="7184" vertical-scroll-proportion="0.4288889">
+          <folding />
         </state>
       </provider>
     </entry>

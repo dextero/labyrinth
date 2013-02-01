@@ -425,10 +425,10 @@ public class DataSource extends PushBufferDataSource implements CaptureDevice
 				throw new InterruptedIOException("" + e);
 			}
 			
-			
+
 			buffer.copy(nextBuffer);
-			
-			
+
+
 		}
 
 		private final SynchronizedObjectHolder transferHandlerHolder = new SynchronizedObjectHolder();

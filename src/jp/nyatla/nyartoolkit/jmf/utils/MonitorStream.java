@@ -121,6 +121,7 @@ public class MonitorStream implements PushBufferStream, BufferTransferHandler
 			dataAvailable = true;
 			bufferLock.notifyAll();
 		}
+
 		if (img_listener != null) {
 			img_listener.onUpdateBuffer(cbuffer);
 		}
