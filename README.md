@@ -13,7 +13,7 @@ Wideo: http://www.youtube.com/watch?v=Ggl8M4-JwDA
 Instalacja
 ----------
 
-Nie jest wymagana instalacja, nalezy jedynie uruchamiac program za pomoca pliku wsadowego launcher.bat, dolaczonego do paczki.
+Paczka znajduje sie w folderze bin/. Nie jest wymagana instalacja, nalezy jedynie uruchamiac program za pomoca dolaczonego pliku wsadowego launcher.bat.
 
 
 Uzyte biblioteki
