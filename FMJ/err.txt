@@ -1,3 +1,0 @@
-INFO: FMJ registry document version 0.1
-INFO: javax.media.Manager version: FMJ non-release x.x
-WARNING: Unable to initialize ffmpeg libraries: java.lang.UnsatisfiedLinkError: Cannot locate library avformat-52
