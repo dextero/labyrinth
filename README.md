@@ -17,7 +17,7 @@ Instalacja
 
 Nie jest wymagana instalacja, nalezy jedynie uruchamiac program za pomoca dolaczonego pliku wsadowego launcher.bat.
 
-Obrazkiem do wydrukowania znajduje sie w pliku data/marker.png.
+Obrazek do wydrukowania znajduje sie w pliku data/marker.png.
 
 
 Uzyte biblioteki
