@@ -1,1 +1,0 @@
-RGB format: 640x480, 30.000031 fps, type 1
