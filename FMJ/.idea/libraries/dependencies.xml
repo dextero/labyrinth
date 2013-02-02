@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="dependencies">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/ffmpeg-java.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/gstreamer-java.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jdom.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jheora-patch.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jl1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jna.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jogg-0.0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jorbis-0.0.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jspeex.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lti-civil-no_s_w_t.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mp3spi1.9.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/theora-java.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tritonus_share.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/vorbisspi1.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
