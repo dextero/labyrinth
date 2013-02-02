@@ -1,6 +1,13 @@
-set JAVA_32BIT="c:\program files (x86)\java\jre7\bin\java"
+@set JAVA_32BIT="c:\program files (x86)\java\jre7\bin\java.exe"
 
-if not exist ("%USERPROFILE%\.fmj.registry.xml") (
+@if not exist %JAVA_32BIT% (
+    @echo INFO: %JAVA_32BIT% not found, trying "java -d32"
+    @set JAVA_32BIT=java -d32
+)
+
+@if not exist "%USERPROFILE%\.fmj.registry.xml" (
+    @echo INFO: .fmj.registry.xml not found, creating a new one
+
     :: tworzenie rejestru urzadzen FMJ
     %JAVA_32BIT% ^
         -Djava.library.path="native/win32-x86" ^
