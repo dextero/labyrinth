@@ -7,17 +7,22 @@ Autor: Marcin Radomski
 
 Projekt w jezyku Java wykonany na zaliczenie przedmiotu Jezyki i Techniki Programowania 2.
 
+Binarki: https://github.com/dextero/labyrinth/archive/bin.zip
+Repozytorium: https://github.com/dextero/labyrinth
 Wideo: http://www.youtube.com/watch?v=Ggl8M4-JwDA
 
 
 Instalacja
 ----------
 
-Paczka znajduje sie w folderze bin/. Nie jest wymagana instalacja, nalezy jedynie uruchamiac program za pomoca dolaczonego pliku wsadowego launcher.bat.
+Nie jest wymagana instalacja, nalezy jedynie uruchamiac program za pomoca dolaczonego pliku wsadowego launcher.bat.
+
+Obrazkiem do wydrukowania znajduje sie w pliku data/marker.png.
 
 
 Uzyte biblioteki
 ----------------
+
 * FMJ (lekko przerobiony, zrodla dostepne w folderze FMJ/): http://fmj-sf.net/
 * JBullet: http://jbullet.advel.cz/
 * NyARToolkit: http://nyatla.jp/nyartoolkit/wp/?page_id=198
