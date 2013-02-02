@@ -20,4 +20,5 @@
 %JAVA_32BIT% ^
     -Djava.library.path="native/win32-x86" ^
     -Dfile.encoding=UTF-8 ^
-    -jar .\labyrinth.jar
+    -jar .\labyrinth.jar ^
+        -debug

@@ -15,7 +15,7 @@ Wideo: http://www.youtube.com/watch?v=Ggl8M4-JwDA
 Instalacja
 ----------
 
-Nie jest wymagana instalacja, nalezy jedynie uruchamiac program za pomoca dolaczonego pliku wsadowego launcher.bat.
+Program do dzialania wymaga Javy 7 w wersji 32bitowej. Nie jest wymagana instalacja samej aplikacji, nalezy jedynie uruchamiac program za pomoca dolaczonego pliku wsadowego launcher.bat.
 
 Obrazek do wydrukowania znajduje sie w pliku data/marker.png.
 
