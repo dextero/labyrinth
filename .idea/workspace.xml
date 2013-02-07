@@ -10,7 +10,7 @@
     <ignored path="labyrinth.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/fragment.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359667259668" ignored="false" />
-    <file path="/Game.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359626313323" ignored="false" />
+    <file path="/Game.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1360267230505" ignored="false" />
     <file path="/MANIFEST.MF" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359390651397" ignored="false" />
     <file path="/JmfCaptureDeviceList.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359591855535" ignored="false" />
     <file path="/Registry.java" changelist="f6e929ae-9cb6-470b-9f1c-21a943bf7be4" time="1359543732658" ignored="false" />
@@ -67,40 +67,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </breakpoint_any>
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint url="file://D:/lib/FMJ/src.capture/net/sf/fmj/media/protocol/civil/DataSource.java" line="172" class="net.sf.fmj.media.protocol.civil.DataSource" package="net.sf.fmj.media.protocol.civil">
         <option name="ENABLED" value="true" />
@@ -173,6 +139,40 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </line_breakpoints>
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
@@ -186,7 +186,25 @@
       <file leaf-file-name="Game.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="223" column="56" selection-start="9015" selection-end="9017" vertical-scroll-proportion="0.41555557">
+            <state line="350" column="0" selection-start="15013" selection-end="15013" vertical-scroll-proportion="0.60444444">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Matrix4.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Matrix4.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="181" column="16" selection-start="5223" selection-end="5223" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Drawable.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Drawable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="265" column="29" selection-start="10789" selection-end="10789" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -223,8 +241,8 @@
         <option value="$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/MonitorStream.java" />
         <option value="D:/lib/FMJ/src.capture/net/sf/fmj/media/protocol/civil/DataSource.java" />
         <option value="$PROJECT_DIR$/FMJ/src/net/sf/fmj/media/content/unknown/Handler.java" />
-        <option value="$PROJECT_DIR$/src/pl/labyrinth/Game.java" />
         <option value="D:/lib/FMJ/src/net/sf/fmj/media/content/unknown/Handler.java" />
+        <option value="$PROJECT_DIR$/src/pl/labyrinth/Game.java" />
       </list>
     </option>
   </component>
@@ -232,9 +250,9 @@
     <option name="jreName" value="1.7" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="54" />
+    <option name="x" value="1912" />
     <option name="y" value="-8" />
-    <option name="width" value="1874" />
+    <option name="width" value="1936" />
     <option name="height" value="1096" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -315,6 +333,30 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="labyrinth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="labyrinth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -411,43 +453,19 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labyrinth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labyrinth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
     <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="true" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
-    <property name="last_opened_file_path" value="D:/lib/FMJ/lib/vorbisspi1.0.2.jar!/" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
+    <property name="last_opened_file_path" value="D:/lib/FMJ/lib/vorbisspi1.0.2.jar!/" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="labyrinth" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -461,8 +479,8 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -504,6 +522,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -529,19 +560,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -668,14 +686,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1874" height="1096" extended-state="7" />
-    <editor active="false" />
+    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983425" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24944812" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43101546" sideWeight="0.67838126" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43009606" sideWeight="0.67838126" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -684,7 +702,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13134658" sideWeight="0.67838126" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12700106" sideWeight="0.67838126" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33261105" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -754,39 +772,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/FMJAutoConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="489" selection-end="489" vertical-scroll-proportion="0.5286416">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/JmfCaptureDevice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="19" selection-start="3584" selection-end="3584" vertical-scroll-proportion="0.33277592">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Texture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="33" selection-start="1152" selection-end="1152" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/markersystem/NyARMarkerSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="598" column="16" selection-start="17197" selection-end="17197" vertical-scroll-proportion="0.33277592" />
-      </provider>
-    </entry>
     <entry file="file://D:/lib/FMJ/src/net/sf/fmj/filtergraph/FilterGraphNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="4" selection-start="1366" selection-end="1366" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="64" column="4" selection-start="1366" selection-end="1366" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://D:/lib/FMJ/src.utils/com/lti/utils/synchronization/ProducerConsumerQueue.java">
@@ -808,9 +796,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/jmf/utils/MonitorStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="21" selection-start="3441" selection-end="3441" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="116" column="21" selection-start="3441" selection-end="3441" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FMJ/src/net/sf/fmj/media/content/unknown/Handler.java">
@@ -827,12 +813,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jp/nyatla/nyartoolkit/markersystem/NyARSensor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="0" selection-start="3649" selection-end="3649" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#6606#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
+        <state line="116" column="0" selection-start="3649" selection-end="3649" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_10/src.zip!/java/lang/Object.java">
@@ -842,21 +823,45 @@
     </entry>
     <entry file="file://D:/lib/FMJ/src/net/sf/fmj/media/content/unknown/Handler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="451" column="68" selection-start="14188" selection-end="14188" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="451" column="68" selection-start="14188" selection-end="14188" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://D:/lib/FMJ/src/net/sf/fmj/media/parser/RawPushBufferParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="2" selection-start="1026" selection-end="1026" vertical-scroll-proportion="0.0">
+        <state line="31" column="2" selection-start="1026" selection-end="1026" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Drawable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="265" column="29" selection-start="10789" selection-end="10789" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/MatrixNotInvertibleException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="124" selection-end="124" vertical-scroll-proportion="0.14895947">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/vecmath.jar!/javax/vecmath/Matrix4f.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="22" selection-start="4909" selection-end="4909" vertical-scroll-proportion="0.34234235">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Matrix4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="181" column="16" selection-start="5223" selection-end="5223" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pl/labyrinth/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="223" column="56" selection-start="9015" selection-end="9017" vertical-scroll-proportion="0.41555557">
+        <state line="350" column="0" selection-start="15013" selection-end="15013" vertical-scroll-proportion="0.60444444">
           <folding />
         </state>
       </provider>

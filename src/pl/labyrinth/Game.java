@@ -17,6 +17,7 @@ import jp.nyatla.nyartoolkit.markersystem.NyARMarkerSystemConfig;
 import javax.media.opengl.*;
 import javax.media.opengl.awt.GLCanvas;
 import javax.swing.*;
+import javax.vecmath.SingularMatrixException;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -237,11 +238,13 @@ public class Game extends JFrame {
                 try {
                     gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
 
+                    // pobieranie obrazu z kamery do tekstury
                     if (backgroundTexture != null)
                         backgroundTexture.release();
                     backgroundTexture = new Texture(gl, camera.getSourceImage());
                     glMarkerSystem.update(camera);
 
+                    // rysowanie tla (obraz z kamery)
                     if (showBackground) {
                         backgroundShader.bind();
                         setProjectionMatrix(gl, orthographicMatrix);
@@ -252,6 +255,7 @@ public class Game extends JFrame {
                         gl.glClear(GL3.GL_DEPTH_BUFFER_BIT);
                     }
 
+                    // test macierzy perspektywy
                     if (testProjectionMatrix) {
                         diffuseShader.bind();
                         setProjectionMatrix(gl, perspectiveMatrix);
@@ -267,6 +271,7 @@ public class Game extends JFrame {
                     setProjectionMatrix(gl, perspectiveMatrix);
 
                     if (glMarkerSystem.isExistMarker(markerId)) {
+                        // znaleziomo marker
                         Matrix4 markerMatrix = new Matrix4(glMarkerSystem.getGlMarkerMatrix(markerId)).transposed();
                         AffineTransform transform = markerMatrix.decompose();
                         Vector3 yawPitchRoll = transform.getEulerAngles();
@@ -274,28 +279,35 @@ public class Game extends JFrame {
                         Matrix4 transformedPerspective = perspectiveMatrix.mulRet(transform.toMatrix());
 
                         if (!calibration) {
+                            // kalibracja zakonczona - rysowanie labiryntu
                             isRunning = true;
 
-                            Vector3 gravity = new Vector3(0.f, 0.f, -10.f);
-                            Matrix4 mat = markerMatrix.getRotation().inverse().mulRet(zeroRotation);
-                            mat.transform(gravity);
-                            labyrinth.setGravity(gravity);
+                            try {
+                                Vector3 gravity = new Vector3(0.f, 0.f, -10.f);
+                                Matrix4 mat = markerMatrix.getRotation().inverse().mulRet(zeroRotation);
+                                mat.transform(gravity);
+                                labyrinth.setGravity(gravity);
 
-                            if (showGravityLine) {
-                                Vector3 pos = labyrinth.getBallPos();
-                                markerMatrix.transform(pos);
-                                pos.add(transform.getTranslation());
-                                gravityLine.setPosition(pos);
-                                gravityLine.setRotation(transform.getRotationAxis(), transform.getRotationAngle());
-                                gravityLine.setScale(gravity.mulRet(labyrinth.getWallThickness()));
-                                gravityLine.setupAttributes();
-                                gravityLine.draw();
+                                if (showGravityLine) {
+                                    Vector3 pos = labyrinth.getBallPos();
+                                    markerMatrix.transform(pos);
+                                    pos.add(transform.getTranslation());
+                                    gravityLine.setPosition(pos);
+                                    gravityLine.setRotation(transform.getRotationAxis(), transform.getRotationAngle());
+                                    gravityLine.setScale(gravity.mulRet(labyrinth.getWallThickness()));
+                                    gravityLine.setupAttributes();
+                                    gravityLine.draw();
+                                }
+
+                                diffuseShader.bind();
+                                setProjectionMatrix(gl, transformedPerspective);
+                                labyrinth.draw();
+                            } catch (SingularMatrixException e) {
+                                System.out.println("warning: singular transformation matrix");
+                                isRunning = false;
                             }
-
-                            diffuseShader.bind();
-                            setProjectionMatrix(gl, transformedPerspective);
-                            labyrinth.draw();
                         } else {
+                            // kalibracja
                             isRunning = false;
 
                             gl.glPolygonMode(GL3.GL_FRONT_AND_BACK, GL3.GL_LINE);
@@ -323,6 +335,7 @@ public class Game extends JFrame {
                         perspectiveShader.bind();
                         setProjectionMatrix(gl, transformedPerspective);
 
+                        // rysowanie osi
                         if (showXYZAxes) {
                             for (int i = 0; i < axes.length; ++i) {
                                 axes[i].setupAttributes();
