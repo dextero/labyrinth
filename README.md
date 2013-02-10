@@ -22,10 +22,10 @@ Obrazek do wydrukowania znajduje sie w pliku data/marker.png.
 Klawiszologia
 -------------
 
-Spacja - restart/kalibracja
--_ (minus/underscore) - zmniejszenie rozmiaru mapy
-=+ (znak rownosci/plus) - zwiekszenie rozmiaru mapy
-Escape - wyjscie
+* spacja - restart/kalibracja
+* -_ (minus/underscore) - zmniejszenie rozmiaru mapy
+* =+ (znak rownosci/plus) - zwiekszenie rozmiaru mapy
+* escape - wyjscie
 
 Uzyte biblioteki
 ----------------
