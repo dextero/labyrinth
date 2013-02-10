@@ -224,14 +224,14 @@ public class Matrix4 extends Matrix4f {
     }
 
     public static Matrix4 rotate(Vector3 yawPitchRoll) {
-        return rotate(yawPitchRoll.x(), yawPitchRoll.y(), yawPitchRoll.z());
+        return rotate(yawPitchRoll.x, yawPitchRoll.y, yawPitchRoll.z);
     }
 
     public static Matrix4 scale(Vector3 factors) {
         Matrix4 ret = Matrix4.identity();
-        ret.m00 = factors.x();
-        ret.m11 = factors.y();
-        ret.m22 = factors.z();
+        ret.m00 = factors.x;
+        ret.m11 = factors.y;
+        ret.m22 = factors.z;
         ret.m33 = 1.f;
 
         return ret;

@@ -27,7 +27,6 @@ import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Timer;
 import java.util.TimerTask;
 
 /**
@@ -86,6 +85,14 @@ public class Game extends JFrame {
     //private Vector3 zeroRotation = new Vector3(0.f, 0.f, 0.f);
     private Matrix4 zeroRotation = Matrix4.identity();
 
+    private String currentMessage;
+    private int messageFramesShowing;
+    private static final int MESSAGE_MAX_FRAMES = 100;
+
+    private int mapSize = 15;
+    private long startTimeMillis;
+    private long endTimeMillis = 0;
+
     // event handlery
     class WindowEventHandler extends WindowAdapter {
         @Override
@@ -103,6 +110,8 @@ public class Game extends JFrame {
     class KeyEventHandler extends KeyAdapter {
         @Override
         public void keyPressed(KeyEvent e) {
+            final float MODIFY_STEP = 1.f;
+
             switch (e.getKeyCode()) {
                 case KeyEvent.VK_1:
                     showBackground = !showBackground;
@@ -124,15 +133,66 @@ public class Game extends JFrame {
                     dispose();
                     System.exit(0);
                     break;
-                default:
+                case KeyEvent.VK_PLUS:
+                case KeyEvent.VK_EQUALS:
+                    ++mapSize;
+                    showMessage(String.format("map size = %d", mapSize));
                     break;
+                case KeyEvent.VK_UNDERSCORE:
+                case KeyEvent.VK_MINUS:
+                    if (mapSize > 5)
+                        --mapSize;
+                    showMessage(String.format("map size = %d", mapSize));
+                    break;
+/*
+                case KeyEvent.VK_A:
+                    labyrinth.getPhysics().modifyBallFriction(MODIFY_STEP);
+                    showMessage(String.format("ball_friction = %f", labyrinth.getPhysics().ballBody.getFriction()));
+                    break;
+                case KeyEvent.VK_Z:
+                    labyrinth.getPhysics().modifyBallFriction(-MODIFY_STEP);
+                    showMessage(String.format("ball_friction = %f", labyrinth.getPhysics().ballBody.getFriction()));
+                    break;
+                case KeyEvent.VK_S:
+                    labyrinth.getPhysics().modifyGroundFriction(MODIFY_STEP);
+                    showMessage(String.format("ground_friction = %f", labyrinth.getPhysics().groundBody.getFriction()));
+                    break;
+                case KeyEvent.VK_X:
+                    labyrinth.getPhysics().modifyGroundFriction(-MODIFY_STEP);
+                    showMessage(String.format("ground_friction = %f", labyrinth.getPhysics().groundBody.getFriction()));
+                    break;
+                case KeyEvent.VK_D:
+                    labyrinth.getPhysics().modifyWallFriction(MODIFY_STEP);
+                    showMessage(String.format("wall_friction = %f", labyrinth.getPhysics().topBorderBody.getFriction()));
+                    break;
+                case KeyEvent.VK_C:
+                    labyrinth.getPhysics().modifyWallFriction(-MODIFY_STEP);
+                    showMessage(String.format("wall_friction = %f", labyrinth.getPhysics().topBorderBody.getFriction()));
+                    break;
+//*/
+            default:
+                break;
             }
         }
     }
 
+    public void setLabyrinth(Labyrinth labyrinth) {
+        //labyrinth = new Labyrinth(gl, MAP_FILE);
+        this.labyrinth = labyrinth;
+
+        java.util.Timer timer = new java.util.Timer(true);
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                if (isRunning)
+                    if (Game.this.labyrinth.update(0.0333f) && endTimeMillis == 0)
+                        endTimeMillis = System.currentTimeMillis();
+            }
+        }, 0, 33);
+    }
+
     class GLEventHandler implements GLEventListener {
         TextRenderer textRenderer;
-        float z = 0.f;
 
         @Override
         public void init(GLAutoDrawable drawable) {
@@ -193,16 +253,6 @@ public class Game extends JFrame {
 
             testSphere = Drawable.createSphere(gl, 8, 8, new float[] { 1.f, 1.f, 1.f });
             testSphere.setPosition(new Vector3(0.f, 0.f, -10.f));
-
-            labyrinth = new Labyrinth(gl, MAP_FILE);
-            java.util.Timer timer = new Timer(true);
-            timer.scheduleAtFixedRate(new TimerTask() {
-                @Override
-                public void run() {
-                    if (isRunning)
-                        labyrinth.update(0.0333f);
-                }
-            }, 0, 33);
 
             System.out.println(Matrix4.translate(new Vector3(1.f, 2.f, 3.f)).decompose());
             System.out.println(Matrix4.rotate(new Vector3(0.f, 0.f, -1.f), 1.f).decompose());
@@ -319,9 +369,14 @@ public class Game extends JFrame {
                                 calibrationFrames = 0;
                                 System.out.println("error exceeded");
                             } else if (++calibrationFrames >= maxCalibrationFrames) {
-                                labyrinth.reset();
                                 calibration = false;
                                 System.out.println("calibration complete!");
+
+                                setLabyrinth(new Labyrinth(gl, mapSize));
+                                System.out.printf("map reloaded. size: %d\n", mapSize);
+
+                                startTimeMillis = System.currentTimeMillis();
+                                endTimeMillis = 0;
                             }
 
                             coloredQuad.setTransform(transform);
@@ -350,6 +405,9 @@ public class Game extends JFrame {
                 }
 
                 textShader.bind();
+                gl.glEnable(GL3.GL_BLEND);
+                gl.glBlendFunc(GL3.GL_ONE_MINUS_DST_COLOR, GL3.GL_ZERO);
+
                 backgroundQuad.setupAttributes(); // uh?
                 Vector3 textPos = new Vector3(-(float)resolution.getWidth() * 0.5f + 10.f, -(float)resolution.getHeight() * 0.5f + 10.f, 0.f);
                 Matrix4 textTranslationMatrix = Matrix4.translate(textPos);
@@ -364,6 +422,54 @@ public class Game extends JFrame {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
+                if (currentMessage != null && messageFramesShowing < MESSAGE_MAX_FRAMES) {
+                    textPos.y *= 0.9f;
+                    textTranslationMatrix = Matrix4.translate(textPos);
+                    setProjectionMatrix(gl, textMatrix.mulRet(textTranslationMatrix));
+
+                    try {
+                        textRenderer.drawString3D((GL2ES2)drawable.getGL(),
+                                                  FontFactory.getDefault().getDefault(),
+                                                  currentMessage,
+                                                  new float[] { 0.f, 0.f, 0.f },
+                                                  15, new int[]{0}
+                                                  );
+                        ++messageFramesShowing;
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                // czas
+                if (labyrinth != null) {
+                    textPos = new Vector3(-(float)resolution.getWidth() * 0.5f + 10.f, (float)resolution.getHeight() * 0.45f, 0.f);
+                    textTranslationMatrix = Matrix4.translate(textPos);
+                    setProjectionMatrix(gl, textMatrix.mulRet(textTranslationMatrix));
+
+                    long time;
+                    if (endTimeMillis == 0) {
+                        time = System.currentTimeMillis() - startTimeMillis;
+                    } else {
+                        time = endTimeMillis - startTimeMillis;
+                    }
+
+                    String timeString = String.format("Czas: %d.%ds", time / 1000, time % 1000);
+
+                    try {
+                        textRenderer.drawString3D((GL2ES2)drawable.getGL(),
+                                                  FontFactory.getDefault().getDefault(),
+                                                  timeString,
+                                                  new float[] { 0.f, 0.f, 0.f },
+                                                  15, new int[]{0}
+                                                  );
+                        ++messageFramesShowing;
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                gl.glBlendFunc(GL3.GL_DST_ALPHA, GL3.GL_ONE_MINUS_DST_ALPHA);
             }
         }
 
@@ -457,5 +563,10 @@ public class Game extends JFrame {
         for (int i = 0; i < array.length; ++i)
             ret[i] = (float)array[i];
         return ret;
+    }
+
+    private void showMessage(String message) {
+        currentMessage = message;
+        messageFramesShowing = 0;
     }
 }

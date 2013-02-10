@@ -24,7 +24,10 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
+import java.util.Stack;
 
 /**
  * Created with IntelliJ IDEA.
@@ -44,6 +47,8 @@ public class Labyrinth {
 
     private boolean isCompleted;
     private boolean hasExploded;
+
+    private ConfigFile configFile = new ConfigFile("data/jbullet.config");
 
     class Physics {
         public CollisionShape ballShape;
@@ -69,63 +74,94 @@ public class Labyrinth {
         public SequentialImpulseConstraintSolver solver;
         public DiscreteDynamicsWorld dynamicsWorld;
 
-        public Physics(float wallThickness, float width, float height, char[][] map, int wallsCount, Point start, Point end) {
-            broadphase = new DbvtBroadphase();
-            collisionConfiguration = new DefaultCollisionConfiguration();
-            dispatcher = new CollisionDispatcher(collisionConfiguration);
-            solver = new SequentialImpulseConstraintSolver();
-            dynamicsWorld = new DiscreteDynamicsWorld(dispatcher, broadphase, solver, collisionConfiguration);
-
-            // tworzenie cial fizycznych
+        private void createBallBody(float wallThickness, float width, float height, Point start) {
             float halfWallThickness = wallThickness * 0.5f;
-            float halfWidth = width * 0.5f;
-            float halfHeight = height * 0.5f;
 
             ballShape = new SphereShape(0.8f * halfWallThickness);
+
+            Vector3 startPos = new Vector3((-width * 0.5f + ((float)start.getX() + 0.5f)) * wallThickness,
+                                             (-height * 0.5f + ((float)start.getY() + 0.5f)) * wallThickness,
+                                            wallThickness * 2.f);
+            ballBody = new RigidBody(1.f, new DefaultMotionState(), ballShape);
+            ballBody.translate(startPos);
+
+            if (configFile.hasKey("ball_friction"))
+                ballBody.setFriction(configFile.getFloat("ball_friction"));
+
+            float ballMass = 1.f;
+            Vector3 ballInertia = new Vector3(1.f);
+            if (configFile.hasKey("ball_mass"))
+                ballMass = configFile.getFloat("ball_mass");
+            if (configFile.hasKey("ball_inertia"))
+                ballInertia = configFile.getVector3("ball_inertia");
+            ballBody.setMassProps(ballMass, ballInertia);
+
+            dynamicsWorld.addRigidBody(ballBody);
+        }
+
+        private void createWallBodies(float wallThickness, float width, float height, char[][] map, int wallsCount, Point end) {
+            // tworzenie cial fizycznych
+            float fullWidth = width * wallThickness;
+            float fullHeight = height * wallThickness;
+            float halfWallThickness = wallThickness * 0.5f;
+            float halfWidth = fullWidth * 0.5f;
+            float halfHeight = fullHeight * 0.5f;
+
+            float groundFriction = 1.f;
+            float wallFriction = 1.f;
+
+            if (configFile.hasKey("ground_friction"))
+                groundFriction = configFile.getFloat("ground_friction");
+            if (configFile.hasKey("wall_frction"))
+                wallFriction = configFile.getFloat("wall_friction");
+
             groundShape = new BoxShape(new Vector3(halfWidth  + wallThickness, halfHeight + wallThickness, halfWallThickness));
             borderShapeW = new BoxShape(new Vector3(halfWallThickness, halfHeight + wallThickness, halfWallThickness));
             borderShapeH = new BoxShape(new Vector3(halfWidth + wallThickness, halfWallThickness, halfWallThickness));
             wallShape = new BoxShape(new Vector3(halfWallThickness, halfWallThickness, halfWallThickness));
 
-            Vector3 startPos = new Vector3(-width * 0.5f + ((float)start.getX() + 0.5f) * wallThickness,
-                                             -height * 0.5f + ((float)start.getY() + 0.5f) * wallThickness,
-                                            wallThickness * 2.f);
-            ballBody = new RigidBody(1.f, new DefaultMotionState(), ballShape);
-            ballBody.translate(startPos);
-
             groundBody = new RigidBody(0.f, null, groundShape);
             groundBody.translate(new Vector3(0.f, 0.f, -wallThickness));
+            groundBody.setFriction(groundFriction);
 
             leftBorderBody = new RigidBody(0.f, null, borderShapeW);
-            leftBorderBody.translate(new Vector3(-width * 0.5f - wallThickness * 0.5f, 0.f, 0.f));
+            leftBorderBody.translate(new Vector3(-fullWidth * 0.5f - wallThickness * 0.5f, 0.f, 0.f));
+            leftBorderBody.setFriction(wallFriction);
+
             rightBorderBody = new RigidBody(0.f, null, borderShapeW);
-            rightBorderBody.translate(new Vector3(width * 0.5f + wallThickness * 0.5f, 0.f, 0.f));
+            rightBorderBody.translate(new Vector3(fullWidth * 0.5f + wallThickness * 0.5f, 0.f, 0.f));
+            rightBorderBody.setFriction(wallFriction);
+
             topBorderBody = new RigidBody(0.f, null, borderShapeH);
-            topBorderBody.translate(new Vector3(0.f, -height * 0.5f - wallThickness * 0.5f, 0.f));
+            topBorderBody.translate(new Vector3(0.f, -fullHeight * 0.5f - wallThickness * 0.5f, 0.f));
+            topBorderBody.setFriction(wallFriction);
+
             bottomBorderBody = new RigidBody(0.f, null, borderShapeH);
-            bottomBorderBody.translate(new Vector3(0.f, height * 0.5f + wallThickness * 0.5f, 0.f));
+            bottomBorderBody.translate(new Vector3(0.f, fullHeight * 0.5f + wallThickness * 0.5f, 0.f));
+            bottomBorderBody.setFriction(wallFriction);
 
             endBody = new RigidBody(0.f, null, wallShape);
-            endBody.translate(new Vector3(-width * 0.5f + ((float)end.getX() + 0.5f) * wallThickness,
-                    -height * 0.5f + ((float)end.getY() + 0.5f) * wallThickness,
-                    -wallThickness * 0.99f));
+            endBody.translate(new Vector3(-fullWidth * 0.5f + ((float)end.getX() + 0.5f) * wallThickness,
+                    -fullHeight * 0.5f + ((float)end.getY() + 0.5f) * wallThickness,
+                    -wallThickness * 0.95f));
+            endBody.setFriction(groundFriction);
 
             wallBodies = new RigidBody[wallsCount];
             int current = 0;
-            for (int y = 0; y < (int)(height / wallThickness); ++y)
-                for (int x = 0; x < (int)(width / wallThickness); ++x) {
+            for (int y = 0; y < height; ++y)
+                for (int x = 0; x < width; ++x) {
                     if (map[x][y] == '#') {
                         RigidBody body = new RigidBody(0.f, null, wallShape);
-                        Vector3 pos = new Vector3(-width * 0.5f + ((float)x + 0.5f) * wallThickness,
-                                                    -height * 0.5f + ((float)y + 0.5f) * wallThickness,
+                        Vector3 pos = new Vector3(-fullWidth * 0.5f + ((float)x + 0.5f) * wallThickness,
+                                                    -fullHeight * 0.5f + ((float)y + 0.5f) * wallThickness,
                                                     0.f);
                         body.translate(pos);
+                        body.setFriction(wallFriction);
                         wallBodies[current++] = body;
                     }
                 }
 
             // wlasciwe dodawanie cial do swiata
-            dynamicsWorld.addRigidBody(ballBody);
             dynamicsWorld.addRigidBody(groundBody);
             dynamicsWorld.addRigidBody(leftBorderBody);
             dynamicsWorld.addRigidBody(rightBorderBody);
@@ -136,6 +172,17 @@ public class Labyrinth {
                 dynamicsWorld.addRigidBody(wallBodies[i]);
 
             dynamicsWorld.addRigidBody(endBody);
+        }
+
+        public Physics(float wallThickness, float width, float height, char[][] map, int wallsCount, Point start, Point end) {
+            broadphase = new DbvtBroadphase();
+            collisionConfiguration = new DefaultCollisionConfiguration();
+            dispatcher = new CollisionDispatcher(collisionConfiguration);
+            solver = new SequentialImpulseConstraintSolver();
+            dynamicsWorld = new DiscreteDynamicsWorld(dispatcher, broadphase, solver, collisionConfiguration);
+
+            createBallBody(wallThickness, width, height, start);
+            createWallBodies(wallThickness, width, height, map, wallsCount, end);
 
             // kolizja pilki z koncem labiryntu
             dynamicsWorld.setInternalTickCallback(new InternalTickCallback() {
@@ -230,7 +277,9 @@ public class Labyrinth {
 
         }
 
-        public void update(float dt) {
+        public boolean update(float dt) {
+            // zwraca true po dotarciu na koniec planszy
+
             synchronized (dynamicsWorld) {
                 dynamicsWorld.stepSimulation(dt, 2);
 
@@ -262,6 +311,36 @@ public class Labyrinth {
                     }
                 }
             }
+
+            return isCompleted;
+        }
+
+        public void modifyWallFriction(float delta) {
+            topBorderBody.setFriction(topBorderBody.getFriction() + delta);
+            leftBorderBody.setFriction(leftBorderBody.getFriction() + delta);
+            rightBorderBody.setFriction(rightBorderBody.getFriction() + delta);
+            bottomBorderBody.setFriction(bottomBorderBody.getFriction() + delta);
+
+            for (RigidBody rb: wallBodies)
+                rb.setFriction(rb.getFriction() + delta);
+
+            configFile.setFloat("wall_friction", topBorderBody.getFriction());
+            configFile.save();
+        }
+
+        public void modifyGroundFriction(float delta) {
+            groundBody.setFriction(groundBody.getFriction() + delta);
+            endBody.setFriction(endBody.getFriction() + delta);
+
+            configFile.setFloat("ground_friction", groundBody.getFriction());
+            configFile.save();
+        }
+
+        public void modifyBallFriction(float delta) {
+            ballBody.setFriction(ballBody.getFriction() + delta);
+
+            configFile.setFloat("ball_friction", ballBody.getFriction());
+            configFile.save();
         }
     }
 
@@ -307,6 +386,22 @@ public class Labyrinth {
     public Labyrinth(GL3 gl, String filename) {
         this.gl = gl;
         loadFromFile(filename);
+    }
+
+    public Labyrinth(GL3 gl, int mapSize) {
+        this.gl = gl;
+        setRandomMap(mapSize, mapSize);
+    }
+
+    public void setRandomMap(int mapWidth, int mapHeight) {
+        width = mapWidth * 2 - 1;
+        height = mapHeight * 2 - 1;
+        start = new Point();
+        end = new Point();
+        map = generateMap(width, height, start, end);
+        boxes = 5 + countWalls(map);
+
+        reset();
     }
 
     public void loadFromFile(String filename) {
@@ -425,11 +520,11 @@ public class Labyrinth {
             }
         }
 
-        Drawable ballDrawable = Drawable.createSphere(gl, 16, 16, new float[] { 1.f, 0.f, 0.f });
+        Drawable ballDrawable = Drawable.createSphere(gl, 16, 16, new float[] { 1.0f, 0.0f, 0.0f });
 
         if (physics != null)
             physics.dynamicsWorld.destroy();
-        physics = new Physics(unitSize, fullWidth, fullHeight, map, boxes - 5, start, end);
+        physics = new Physics(unitSize, width, height, map, boxes - 5, start, end);
 
         ball = new GameObject(ballDrawable, physics.ballBody);
 
@@ -450,7 +545,7 @@ public class Labyrinth {
     }
 
     public float getWallThickness() {
-        return 10.f;
+        return 150.f / (float)Math.max(width, height);
     }
 
     public void setGravity(Vector3 gravity) {
@@ -464,8 +559,8 @@ public class Labyrinth {
         return (Vector3)ball.drawable.getPosition().clone();
     }
 
-    public void update(float dt) {
-        physics.update(dt);
+    public boolean update(float dt) {
+        boolean ret = physics.update(dt);
 
         synchronized (physics) {
             for (int i = 0; i < walls.length - 2; ++i) {
@@ -477,6 +572,12 @@ public class Labyrinth {
             ball.sync();
             //System.out.println(String.format("Ball at: %s", ball.drawable.getPosition().toString()));
         }
+
+        return ret;
+    }
+
+    public Physics getPhysics() {
+        return physics;
     }
 
     public void draw() {
@@ -498,5 +599,132 @@ public class Labyrinth {
             ball.drawable.draw();
 //*/
         }
+    }
+
+    public static char[][] generateMap(int width, int height, Point outStart, Point outEnd) {
+        assert(outStart != null);
+        assert(outEnd != null);
+
+        class PointDistance {
+            public int x;
+            public int y;
+            public int distance;
+
+            public PointDistance(int posX, int posY, int dist) {
+                x = posX;
+                y = posY;
+                distance = dist;
+            }
+
+            public PointDistance copy() {
+                return new PointDistance(x, y, distance);
+            }
+        }
+
+        char[][] ret = new char[width][height];
+
+        for (int x = 0; x < width; ++x) {
+            for (int y = 0; y < height; ++y) {
+                ret[x][y] = '#';
+            }
+        }
+
+        outStart.x = 0;
+        outStart.y = 0;
+        outEnd.x = 0;
+        outEnd.y = 0;
+        ret[0][0] = '^';
+
+        ArrayList<Point> available = new ArrayList<Point>();
+        Stack<PointDistance> points = new Stack<PointDistance>();
+        points.push(new PointDistance(0, 0, 0));
+        Random random = new Random();
+
+        int endDistance = 0;
+
+        while (!points.empty()) {
+            PointDistance current = points.pop();
+
+            ret[current.x][current.y] = ' ';
+
+            available.clear();
+            if (current.x - 2 >= 0 && ret[current.x - 2][current.y] == '#')
+                available.add(new Point(current.x - 2, current.y));
+            if (current.x + 2 < width && ret[current.x + 2][current.y] == '#')
+                available.add(new Point(current.x + 2, current.y));
+
+            if (current.y - 2 >= 0 && ret[current.x][current.y - 2] == '#')
+                available.add(new Point(current.x, current.y - 2));
+            if (current.y + 2 < height && ret[current.x][current.y + 2] == '#')
+                available.add(new Point(current.x, current.y + 2));
+
+            if (available.size() > 1)
+                points.push(current);
+
+            PointDistance next = current;
+            if (available.size() > 0) {
+                Point nextPoint = available.get(random.nextInt(available.size()));
+                next = new PointDistance(nextPoint.x, nextPoint.y, current.distance + 1);
+            } else if (endDistance < current.distance) {
+                outEnd.x = current.x;
+                outEnd.y = current.y;
+                endDistance = current.distance;
+            }
+
+            if (next.x - current.x < 0) {
+                for (int x = next.x; x < current.x; ++x)
+                    ret[x][current.y] = ' ';
+            } else {
+                for (int x = current.x + 1; x <= next.x; ++x)
+                    ret[x][current.y] = ' ';
+            }
+
+            if (next.y - current.y < 0) {
+                for (int y = next.y; y < current.y; ++y)
+                    ret[current.x][y] = ' ';
+            } else {
+                for (int y = current.y + 1; y <= next.y; ++y)
+                    ret[current.x][y] = ' ';
+            }
+
+            if (next != current)
+                points.push(next);
+        }
+
+        ret[outEnd.x][outEnd.y] = '$';
+
+        System.out.print('+');
+        for (int i = 0; i < width; ++i)
+            System.out.print('-');
+        System.out.println('+');
+
+        for (int y = 0; y < height; ++y) {
+            System.out.print('|');
+            for (int x = 0; x < width; ++x)
+                System.out.print(ret[x][y]);
+            System.out.println('|');
+        }
+
+        System.out.print('+');
+        for (int i = 0; i < width; ++i)
+            System.out.print('-');
+        System.out.println('+');
+
+        return ret;
+    }
+
+    public static int countWalls(char[][] map) {
+        int walls = 0;
+
+        for (int x = 0; x < map.length; ++x)
+            for (int y = 0; y < map[x].length; ++y)
+                if (map[x][y] == '#')
+                    ++walls;
+
+        return walls;
+    }
+
+    public static void main(String[] args) {
+        generateMap(10, 10, new Point(), new Point());
     }
 }

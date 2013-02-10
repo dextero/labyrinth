@@ -63,22 +63,22 @@ public class AffineTransform {
 
         double t = 1.0 - cos;
 
-        if (rotationAxis.x() * rotationAxis.y() * t + rotationAxis.z() * sin > 0.998) {
-            yawPitchRoll.setX((float)(2. * Math.atan2(rotationAxis.x() * Math.sin(rotationAngle * .5),
+        if (rotationAxis.x * rotationAxis.y * t + rotationAxis.z * sin > 0.998) {
+            yawPitchRoll.setX((float)(2. * Math.atan2(rotationAxis.x * Math.sin(rotationAngle * .5),
                                                        Math.cos(rotationAngle * .5))));
             yawPitchRoll.setY((float)(Math.PI * .5));
             yawPitchRoll.setZ(0.f);
-        } else if (rotationAxis.x() * rotationAxis.y() * t + rotationAxis.z() * sin < -0.998) {
-            yawPitchRoll.setX((float)(-2. * Math.atan2(rotationAxis.x() * Math.sin(rotationAngle * .5),
+        } else if (rotationAxis.x * rotationAxis.y * t + rotationAxis.z * sin < -0.998) {
+            yawPitchRoll.setX((float)(-2. * Math.atan2(rotationAxis.x * Math.sin(rotationAngle * .5),
                     Math.cos(rotationAngle * .5))));
             yawPitchRoll.setY((float) (-Math.PI * .5));
             yawPitchRoll.setZ(0.f);
         } else {
-            yawPitchRoll.setX((float)(Math.atan2(rotationAxis.y() * sin - rotationAxis.x() * rotationAxis.z() * t,
-                                                 1. - (rotationAxis.y() * rotationAxis.y() + rotationAxis.z() * rotationAxis.z()) * t)));
-            yawPitchRoll.setY((float) (Math.asin(rotationAxis.x() * rotationAxis.y() * t + rotationAxis.z() * sin)));
-            yawPitchRoll.setZ((float)(Math.atan2(rotationAxis.x() * sin - rotationAxis.y() * rotationAxis.z() * t,
-                                                 1. - (rotationAxis.x() * rotationAxis.x() + rotationAxis.z() * rotationAxis.z()) * t)));
+            yawPitchRoll.setX((float)(Math.atan2(rotationAxis.y * sin - rotationAxis.x * rotationAxis.z * t,
+                                                 1. - (rotationAxis.y * rotationAxis.y + rotationAxis.z * rotationAxis.z) * t)));
+            yawPitchRoll.setY((float) (Math.asin(rotationAxis.x * rotationAxis.y * t + rotationAxis.z * sin)));
+            yawPitchRoll.setZ((float)(Math.atan2(rotationAxis.x * sin - rotationAxis.y * rotationAxis.z * t,
+                                                 1. - (rotationAxis.x * rotationAxis.x + rotationAxis.z * rotationAxis.z) * t)));
         }
 
         return yawPitchRoll;
@@ -105,8 +105,8 @@ public class AffineTransform {
     @Override
     public String toString() {
         return String.format("translation: (%f, %f, %f)\nrotation: (%f, %f, %f), angle: %f\nscale: (%f, %f %f)\n",
-                             translation.x(), translation.y(), translation.z(),
-                             rotationAxis.x(), rotationAxis.y(), rotationAxis.z(), rotationAngle,
-                             scale.x(), scale.y(), scale.z());
+                             translation.x, translation.y, translation.z,
+                             rotationAxis.x, rotationAxis.y, rotationAxis.z, rotationAngle,
+                             scale.x, scale.y, scale.z);
     }
 }

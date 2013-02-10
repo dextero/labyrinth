@@ -59,10 +59,6 @@ public class Vector3 extends Vector3f {
         return ret;
     }
 
-    public float x() { return x; }
-    public float y() { return y; }
-    public float z() { return z; }
-
     @Override
     public String toString() {
         return String.format("(%f, %f, %f)", x, y, z);
