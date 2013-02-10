@@ -19,6 +19,13 @@ Program do dzialania wymaga Javy 7 w wersji 32bitowej. Nie jest wymagana instala
 
 Obrazek do wydrukowania znajduje sie w pliku data/marker.png.
 
+Klawiszologia
+-------------
+
+* spacja - restart/kalibracja
+* -_ (minus/underscore) - zmniejszenie rozmiaru mapy
+* =+ (znak rownosci/plus) - zwiekszenie rozmiaru mapy
+* escape - wyjscie
 
 Uzyte biblioteki
 ----------------
